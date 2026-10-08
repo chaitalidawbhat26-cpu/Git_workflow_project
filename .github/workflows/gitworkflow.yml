@@ -5,7 +5,7 @@ on:
   push:
     branches:
       - main
-      - feature
+      
 
 jobs:
 #this workflow contain a single job called
