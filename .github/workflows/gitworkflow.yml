@@ -1,0 +1,34 @@
+name: Build Test Deploy
+#controls when the workflow run
+on:
+#trigger when the workflow pull or push
+  push:
+    branches:
+      - main
+      - feature
+
+jobs:
+#this workflow contain a single job called
+  build-test-deploy:
+
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout Code
+        uses: actions/checkout@v4
+#run a command using runner shell
+      - name: Build
+        run: |
+          echo "Building project....."
+          echo "Build completed successfully!"
+#run a command using runner shell
+      - name: Test
+        run: |
+          echo "TESTING APPLICATION"
+          echo "Running tests..."
+          echo "All tests passed successfully!"
+#run a command using runner shell
+      - name: Deploy
+        run: |
+          echo "Deploying application..."
+          echo "Deployment completed successfully!"
